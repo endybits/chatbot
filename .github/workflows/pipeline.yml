@@ -1,0 +1,20 @@
+name: Deployment pipeline
+on:
+    push:
+        branches:
+            - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu:22.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: List fetched files
+        run: |
+          ls -al
+      - name: Install - Lint & Tests
+        run: |
+          make all
+
