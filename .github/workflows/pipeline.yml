@@ -13,5 +13,7 @@ jobs:
       - name: List fetched files
         run: |
           ls -al
-
+      - name: Install - Lint & Tests
+        run: |
+          make all
 
